@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
+# Node
+node_modules/
+
+# Build
+dist/
+build/
+
+# Temporary
+tmp/
+temp/
+
+# OS
+Thumbs.db
