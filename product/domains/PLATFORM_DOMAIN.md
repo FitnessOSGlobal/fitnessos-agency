@@ -812,3 +812,410 @@ The Platform Domain supplies infrastructure only.
 
 # End of Part 3
 
+---
+
+# Permission Model
+
+The Platform Domain is the authoritative source for authentication and authorization across FitnessOS.
+
+All permission evaluation is performed through the Platform Domain.
+
+Business domains define required permissions for their operations, but permission enforcement is centralized.
+
+---
+
+## Role-Based Access Control (RBAC)
+
+FitnessOS implements Role-Based Access Control.
+
+Permissions are assigned to Roles.
+
+Roles are assigned to Users.
+
+Users inherit permissions through assigned roles.
+
+Platform administrators may additionally receive direct platform permissions where required.
+
+---
+
+## Permission Categories
+
+The Platform Domain manages permission definitions for:
+
+- Platform Administration
+- Organization Administration
+- Branch Administration
+- User Management
+- Role Management
+- Permission Management
+- Licensing
+- Configuration
+- Audit Access
+- Notification Management
+- File Management
+
+Business-specific permissions are defined by their owning domains.
+
+---
+
+## Resource Authorization
+
+Every protected resource access must evaluate:
+
+- Authenticated User
+- Tenant
+- Organization
+- Branch (where applicable)
+- Assigned Role
+- Granted Permission
+- Resource Ownership
+
+Authorization decisions must be deterministic and auditable.
+
+---
+
+# Security Responsibilities
+
+The Platform Domain implements the shared security controls defined in the Security Architecture.
+
+Responsibilities include:
+
+- Identity verification
+- Authentication
+- Authorization
+- Session management
+- Multi-factor authentication
+- Token lifecycle management
+- Password policies
+- Account recovery
+- Audit logging
+- Tenant isolation
+
+Business domains must consume these capabilities rather than implementing their own security mechanisms.
+
+---
+
+# Tenant Boundaries
+
+The Platform Domain enforces tenant isolation across the platform.
+
+Every request must resolve:
+
+- Tenant
+- Organization
+- User
+- Permission Context
+
+Cross-tenant access is prohibited unless explicitly authorized for platform administration.
+
+Tenant isolation applies to:
+
+- Data
+- APIs
+- Files
+- Notifications
+- Audit Logs
+- Configuration
+
+---
+
+# UI Responsibilities
+
+The Platform Domain provides user interfaces for platform administration.
+
+Examples include:
+
+- User Management
+- Role Management
+- Permission Management
+- Organization Management
+- Branch Management
+- Department Management
+- Licensing
+- Platform Settings
+- Feature Flags
+- Notification Configuration
+- File Administration
+- Audit Viewer
+
+Business workflows remain outside the Platform Domain.
+
+---
+
+# Mobile Responsibilities
+
+Platform capabilities exposed to mobile applications include:
+
+- Authentication
+- User Profile
+- Password Management
+- Notification Preferences
+- Session Management
+
+Business functionality remains owned by business domains.
+
+---
+
+# Reporting Responsibilities
+
+The Platform Domain provides operational reporting related to platform administration.
+
+Examples:
+
+- Active Organizations
+- Active Users
+- License Usage
+- Feature Adoption
+- Authentication Activity
+- Audit Activity
+- Storage Utilization
+
+Business analytics are owned by Reporting Domain.
+
+---
+
+# AI Responsibilities
+
+The Platform Domain exposes platform information for AI consumption where appropriate.
+
+Examples:
+
+- Permission analysis
+- User activity summaries
+- Security anomaly detection
+- Platform health insights
+
+Business recommendations remain outside the Platform Domain.
+
+---
+
+# Client Applications Using Platform Services
+
+The following applications consume Platform Domain capabilities:
+
+- Super Admin Portal
+- Gym Owner Web Application
+- Staff Web Application
+- Staff Mobile Application
+- Member Mobile Application
+- Public Website
+
+No client application may implement independent authentication or authorization logic.
+
+---
+
+# End of Part 4
+
+---
+
+# Non-Functional Requirements
+
+The Platform Domain must satisfy the following quality attributes.
+
+## Availability
+
+The Platform Domain should be designed for high availability.
+
+Platform services should remain operational during maintenance wherever practical.
+
+Platform failures must not compromise tenant data integrity.
+
+---
+
+## Scalability
+
+The Platform Domain must support growth from:
+
+- Single-location gyms
+- Multi-branch organizations
+- Franchise networks
+- Enterprise customers
+
+Scaling should occur through architecture rather than business rule changes.
+
+---
+
+## Performance
+
+Platform operations should remain responsive under normal operating conditions.
+
+Performance-sensitive operations include:
+
+- Authentication
+- Authorization
+- Permission evaluation
+- Configuration retrieval
+- License validation
+
+Performance optimization must never compromise correctness or security.
+
+---
+
+## Reliability
+
+Platform services must provide predictable behavior.
+
+Critical operations should support:
+
+- Retry
+- Monitoring
+- Recovery
+- Fault isolation
+
+Failures must be observable and diagnosable.
+
+---
+
+## Security
+
+All security controls defined in the Security Architecture apply to the Platform Domain.
+
+Security responsibilities include:
+
+- Identity protection
+- Authorization enforcement
+- Tenant isolation
+- Auditability
+- Secure configuration
+- Secret management
+
+---
+
+## Maintainability
+
+Platform capabilities should evolve without requiring changes to business domains.
+
+Shared services should remain reusable and backward compatible where practical.
+
+---
+
+## Extensibility
+
+The Platform Domain must support future platform capabilities without architectural redesign.
+
+Examples include:
+
+- Enterprise SSO
+- Marketplace
+- Plugin ecosystem
+- Developer platform
+- Advanced licensing
+- Multi-region deployments
+
+---
+
+# Future Database Implications
+
+The Platform Domain is expected to own the persistent storage for:
+
+- Organizations
+- Brands
+- Regions
+- Branches
+- Facilities
+- Departments
+- Users
+- Roles
+- Permissions
+- Licenses
+- Feature Flags
+- Configuration
+- Notifications
+- Files
+- Audit Logs
+
+Logical ownership is defined here.
+
+Physical database design will be specified during the Database Architecture milestone.
+
+---
+
+# Future Service Boundaries
+
+The Platform Domain may evolve into multiple deployable services while remaining one logical business domain.
+
+Potential service boundaries include:
+
+- Identity Service
+- Authorization Service
+- Organization Service
+- Licensing Service
+- Configuration Service
+- Notification Service
+- File Service
+- Audit Service
+
+Deployment decisions must not change domain ownership.
+
+---
+
+# Cross-Domain Responsibilities
+
+The Platform Domain provides shared services to every other domain.
+
+Business domains must consume platform services through approved APIs and published events.
+
+Business domains must not duplicate:
+
+- Authentication
+- Authorization
+- Tenant Management
+- Licensing
+- Configuration
+- Audit Logging
+- File Infrastructure
+
+---
+
+# Acceptance Criteria
+
+The Platform Domain implementation contract is complete when:
+
+- Responsibilities are clearly defined.
+- Domain boundaries are explicit.
+- Business capabilities are documented.
+- Business rules are defined.
+- Canonical entities are assigned.
+- Public services are identified.
+- API responsibilities are defined.
+- Event responsibilities are defined.
+- Security responsibilities are documented.
+- Permission responsibilities are documented.
+- Tenant boundaries are enforced.
+- UI responsibilities are defined.
+- Mobile responsibilities are defined.
+- Reporting responsibilities are defined.
+- AI responsibilities are defined.
+- Non-functional requirements are documented.
+- Future database implications are identified.
+- Future service boundaries are documented.
+
+---
+
+# Domain Summary
+
+The Platform Domain is the foundational domain of FitnessOS.
+
+It provides the shared infrastructure required by every application and every business domain.
+
+It owns platform capabilities only.
+
+It deliberately excludes business workflows.
+
+Its primary responsibility is to provide secure, scalable, reusable platform services that enable the remainder of FitnessOS to operate consistently.
+
+This domain serves as the reference implementation contract for every remaining domain within the platform.
+
+---
+
+# End of Platform Domain
+
+Status: Architecture Complete
+
+Milestone:
+
+Complete Architecture
+
+Document Classification:
+
+Domain Implementation Contract
