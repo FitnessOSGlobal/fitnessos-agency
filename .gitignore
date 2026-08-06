@@ -20,6 +20,8 @@ node_modules/
 # Build
 dist/
 build/
+dist/
+node_modules/
 
 # Temporary
 tmp/

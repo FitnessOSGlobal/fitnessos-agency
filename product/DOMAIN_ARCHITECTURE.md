@@ -2,13 +2,15 @@
 
 Version: 1.0.0
 
-Status: Draft
+Status: Approved
 
 Owner: Architecture Department
 
 Depends On:
 
 - FITNESSOS_MASTER_SPECIFICATION.md
+- PRODUCT_DECISIONS.md
+- ORGANIZATION_MODEL.md
 
 ---
 
@@ -141,6 +143,25 @@ Every domain will eventually define:
 - Acceptance Criteria
 
 This document serves as the index for those domain specifications.
+
+---
+
+# Next Document
+
+Each individual domain specification:
+
+- PLATFORM_DOMAIN.md
+- MEMBERSHIP_DOMAIN.md
+- ATTENDANCE_DOMAIN.md
+- CRM_DOMAIN.md
+- COMMERCE_DOMAIN.md
+- INVENTORY_DOMAIN.md
+- HR_DOMAIN.md
+- SCHEDULING_DOMAIN.md
+- COMMUNICATION_DOMAIN.md
+- REPORTING_DOMAIN.md
+- AI_DOMAIN.md
+- INTEGRATION_DOMAIN.md
 
 ---
 
