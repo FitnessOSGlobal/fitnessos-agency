@@ -1,16 +1,38 @@
 # FitnessOS
 
-> Building the world's most complete AI-native enterprise operating system for the fitness industry.
+> **An AI-native, enterprise operating system for the global fitness industry.**
+
+FitnessOS is a modern, enterprise-grade Software-as-a-Service (SaaS) platform designed to operate every aspect of a fitness business through a single unified system.
+
+Unlike traditional gym management software, FitnessOS is being engineered using Domain-Driven Design (DDD), AI-first architecture, event-driven communication, and cloud-native engineering principles to provide a scalable foundation for organizations ranging from independent gyms to international fitness franchises.
+
+---
+
+# Current Status
+
+## Project Phase
+
+🚧 **Backend Foundation**
+
+## Status
+
+✅ Enterprise Architecture Complete
+
+## Current Milestone
+
+Backend Foundation & Platform Implementation
+
+The repository now contains the approved enterprise architecture, enterprise database standards, shared engineering standards, and the completed Membership reference domain.
+
+Implementation has officially begun.
 
 ---
 
 # Vision
 
-FitnessOS is an enterprise-grade Software-as-a-Service (SaaS) platform designed to operate every aspect of a fitness business from a single, unified system.
+FitnessOS aims to become the complete operating system for the fitness industry.
 
-Unlike traditional gym management software, FitnessOS is being engineered as a domain-driven enterprise platform with AI, event-driven architecture, and cloud-native scalability at its core.
-
-The long-term goal is to provide a complete operating system for:
+Target organizations include:
 
 - Independent Gyms
 - Fitness Clubs
@@ -23,98 +45,72 @@ The long-term goal is to provide a complete operating system for:
 
 ---
 
-# Current Status
+# Core Principles
 
-**Project Phase**
-
-Enterprise Architecture
-
-Status:
-
-✅ In Progress
-
-Current Milestone:
-
-Enterprise Architecture & System Design
-
-Development has intentionally **not started yet**.
-
-The repository currently contains the complete architectural foundation required before implementation begins.
-
----
-
-# Design Philosophy
-
-FitnessOS is being built using modern enterprise software engineering principles.
-
-Core principles include:
+FitnessOS is built around modern enterprise software engineering principles.
 
 - Domain-Driven Design (DDD)
 - Clean Architecture
-- Event-Driven Architecture
 - API-First Design
-- AI-First Architecture
+- Event-Driven Architecture
+- AI-First Engineering
 - Multi-Tenant SaaS
-- Modular Monolith (initially)
-- Future Microservice Ready
+- Modular Monolith (Phase 1)
+- Microservice Ready (Future)
 - Security by Design
 - Cloud Native
 
-Every architectural decision is documented before implementation.
+Every architectural decision is validated before implementation.
 
 ---
 
 # Repository Structure
 
-```
-product/
+```text
+fitnessos-agency/
+
+├── product/
+│   ├── architecture/
+│   ├── database/
+│   ├── domains/
+│   ├── backlog/
+│   ├── FITNESSOS_MASTER_SPECIFICATION.md
+│   ├── DOMAIN_ARCHITECTURE.md
+│   ├── ORGANIZATION_MODEL.md
+│   └── PRODUCT_DECISIONS.md
+│
+├── standards/
+├── workflows/
+├── templates/
+├── prompts/
+├── agents/
+├── builder/
+├── scripts/
+├── docs/
+├── memory/
 │
 ├── README.md
-│
-├── FITNESSOS_MASTER_SPECIFICATION.md
-├── PRODUCT_DECISIONS.md
-├── ORGANIZATION_MODEL.md
-│
-├── architecture/
-│   ├── DOMAIN_ARCHITECTURE.md
-│   ├── INFORMATION_ARCHITECTURE.md
-│   ├── API_ARCHITECTURE.md
-│   ├── EVENT_ARCHITECTURE.md
-│   └── SECURITY_ARCHITECTURE.md
-│
-└── domains/
-    ├── PLATFORM_DOMAIN.md
-    ├── MEMBERSHIP_DOMAIN.md
-    ├── ATTENDANCE_DOMAIN.md
-    ├── CRM_DOMAIN.md
-    ├── COMMERCE_DOMAIN.md
-    ├── INVENTORY_DOMAIN.md
-    ├── HR_DOMAIN.md
-    ├── SCHEDULING_DOMAIN.md
-    ├── COMMUNICATION_DOMAIN.md
-    ├── REPORTING_DOMAIN.md
-    ├── AI_DOMAIN.md
-    └── INTEGRATION_DOMAIN.md
+└── CHANGELOG.md
 ```
 
 ---
 
-# Architecture Overview
+# Product Architecture
 
-The platform is organized into independent business domains.
+FitnessOS follows a domain-oriented architecture.
 
-## Core Platform
+## Core Business Domains
 
 - Platform
 - Membership
 - Attendance
-- CRM
 - Commerce
-- Inventory
-- Human Resources
+- CRM
 - Scheduling
+- Human Resources
+- Inventory
 
-## Platform Services
+## Supporting Platform Services
 
 - Communication
 - Reporting
@@ -123,141 +119,197 @@ The platform is organized into independent business domains.
 
 Each domain owns its own:
 
-- Responsibilities
 - Business capabilities
 - Business rules
-- Public services
+- Aggregate boundaries
+- Data ownership
 - APIs
 - Events
 - Security boundaries
-- Permission model
-- Future database ownership
 
-No business capability has more than one owner.
+Business ownership is never duplicated across domains.
+
+---
+
+# Enterprise Database Architecture
+
+The database architecture is organized into three layers.
+
+## Enterprise Standards
+
+- Database Foundation
+- Aggregate Model
+- Entity Catalog
+- Schema Architecture
+- Logical Database Model
+- Naming Conventions
+
+## Shared Standards
+
+- Business Glossary
+- Enum Catalog
+- PostgreSQL Standards
+- Indexing Strategy
+- Partitioning Strategy
+- Audit Strategy
+- Migration Guidelines
+- Seeding Strategy
+- Security Guidelines
+- Data Retention Policy
+
+## Domain Database Architecture
+
+Each domain maintains its own implementation-ready database documentation.
+
+Current reference implementation:
+
+✅ Membership Domain
 
 ---
 
 # Current Progress
 
-Completed:
+## Completed
 
-- Product Vision
-- Product Decisions
-- Organization Model
-- Domain Architecture
-- Information Architecture
-- API Architecture
-- Event Architecture
-- Security Architecture
-- All Domain Implementation Contracts
+- ✅ Repository Architecture
+- ✅ Product Architecture
+- ✅ Enterprise Architecture
+- ✅ Enterprise Database Standards
+- ✅ Shared Database Standards
+- ✅ Documentation Methodology
+- ✅ Membership Reference Domain
 
-Next:
+## In Progress
 
-- Architecture Readiness Review
-- Database Architecture
-- Event Catalog
-- API Specifications
-- UX Design
-- Engineering Planning
-- Development
-- Testing
-- Production Deployment
+- 🚧 Backend Foundation
+
+## Next
+
+- Platform Implementation
+- Authentication & Authorization
+- Membership Backend
+- REST APIs
+- Frontend Applications
 
 ---
 
-# Technology Direction
+# Technology Stack
 
-The implementation is planned around a modern TypeScript ecosystem.
-
-Target stack includes:
-
-Frontend
+## Frontend
 
 - Next.js
 - React
 - Tailwind CSS
+- TypeScript
 
-Backend
+## Backend
 
 - NestJS
 - TypeScript
 - PostgreSQL
+- Drizzle ORM
 - Redis
 
-Infrastructure
+## Infrastructure
 
 - Docker
 - GitHub Actions
 - Cloud Deployment
 
-Architecture decisions may evolve as implementation progresses, but the domain boundaries established in this repository remain the source of truth.
+---
+
+# Development Philosophy
+
+FitnessOS follows a **documentation-first** engineering methodology.
+
+Architecture is completed before implementation, allowing development to proceed with clear ownership, predictable boundaries, and minimal architectural rework.
+
+Once an architectural milestone is approved, it is considered frozen unless implementation reveals a genuine design issue.
 
 ---
 
-# Documentation First
+# Current Roadmap
 
-This repository follows a documentation-first approach.
-
-The architecture is intentionally completed before writing production code.
-
-Benefits include:
-
-- Clear ownership boundaries
-- Reduced architectural rework
-- Consistent implementation
-- Easier onboarding
-- Better long-term maintainability
-- Predictable development roadmap
-
----
-
-# Roadmap
-
-Phase 1
+## Phase 1
 
 ✅ Product Definition
 
-Phase 2
+## Phase 2
 
 ✅ Enterprise Architecture
 
-Phase 3
+## Phase 3
 
-⬜ Architecture Validation
+✅ Enterprise Database Architecture
 
-Phase 4
+## Phase 4
 
-⬜ Database Architecture
+🚧 Backend Foundation
 
-Phase 5
+## Phase 5
 
-⬜ API Design
+⬜ Platform Implementation
 
-Phase 6
+## Phase 6
 
-⬜ Engineering Planning
+⬜ Membership Implementation
 
-Phase 7
+## Phase 7
 
-⬜ Product Development
+⬜ Remaining Business Domains
 
-Phase 8
+## Phase 8
+
+⬜ Frontend Applications
+
+## Phase 9
 
 ⬜ Testing & Quality Assurance
 
-Phase 9
+## Phase 10
 
 ⬜ Production Release
 
 ---
 
+# Current Objective
+
+The immediate goal is to deliver the first executable FitnessOS core.
+
+Scope includes:
+
+- Organization Management
+- Branch Management
+- Authentication
+- Authorization
+- Member Management
+- Membership Plans
+- Membership Lifecycle
+
+This will establish the reference implementation for all remaining domains.
+
+---
+
 # Repository Status
 
-This repository currently represents the architectural blueprint of FitnessOS.
+The repository has successfully completed the enterprise architecture phase.
 
-It is intended to serve as the authoritative reference for future engineering, design, testing, AI agents, and documentation.
+Current focus has shifted from architectural design to production implementation.
 
-Until implementation begins, architecture documents are considered the primary source of truth.
+Architecture documents remain the authoritative design reference, while production code becomes the authoritative implementation of those designs.
+
+---
+
+# Contributing
+
+FitnessOS follows an architecture-driven development process.
+
+All implementation should:
+
+- Respect established domain boundaries.
+- Follow enterprise standards.
+- Avoid duplicate ownership.
+- Preserve the documented architecture unless a validated implementation issue requires change.
 
 ---
 
@@ -267,4 +319,4 @@ This repository is proprietary.
 
 All rights reserved.
 
-Unauthorized copying, distribution, or commercial use is prohibited unless explicitly authorized by the project owner.
+Unauthorized copying, distribution, or commercial use is prohibited without explicit authorization from the project owner.

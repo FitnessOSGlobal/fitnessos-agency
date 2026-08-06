@@ -467,11 +467,13 @@ Implementation details remain outside the scope of the Entity Catalog.
 
 # Domain Entity Catalog
 
-The following catalog identifies the persistent business entities within FitnessOS.
+FitnessOS follows a domain-oriented entity architecture.
 
-Every entity belongs to exactly one aggregate.
+Each domain maintains its own authoritative Entity Catalog within its domain-specific `ENTITY_CATALOG.md`.
 
-Every aggregate belongs to exactly one domain.
+The enterprise Entity Catalog defines the standards, ownership principles, classifications, lifecycle rules, identity strategy, and governance for business entities across FitnessOS.
+
+Domain implementations SHALL NOT be duplicated within this document.
 
 ---
 

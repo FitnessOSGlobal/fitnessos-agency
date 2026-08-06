@@ -18,7 +18,7 @@ Depends On:
 
 # Executive Summary
 
-This document defines the official naming standards for every database object within FitnessOS.
+This document supersedes the previous Naming Reference and serves as the single authoritative naming standard for FitnessOS.
 
 Consistent naming improves:
 

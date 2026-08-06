@@ -481,13 +481,11 @@ These characteristics support maintainable and scalable systems.
 
 # Aggregate Catalog
 
-The following aggregates have been identified for FitnessOS.
+FitnessOS follows a domain-oriented aggregate model.
 
-Each aggregate belongs to exactly one domain.
+Each domain maintains its own authoritative aggregate catalog within its domain-specific `AGGREGATE_MODEL.md`.
 
-Each aggregate owns one transactional consistency boundary.
-
-Future entities will belong to one of these aggregates.
+The enterprise Aggregate Model defines the standards and principles governing aggregate design across the platform and does not duplicate domain implementations.
 
 ---
 
