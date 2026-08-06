@@ -1,0 +1,27 @@
+{
+  "name": "fitnessos-agency",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-native enterprise operating system for the fitness industry.",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@10.16.1",
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "format": "prettier --write .",
+    "clean": "turbo clean"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.24",
+    "eslint": "9.34.0",
+    "prettier": "3.6.2",
+    "turbo": "2.5.6",
+    "typescript": "5.9.2"
+  }
+}
